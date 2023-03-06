@@ -13,17 +13,12 @@
 #return type: list
 #függvény neve legyen: subset
 
-input_list=[1,2,3,4,5]
-start=1
-end=4
-
 
 # In[4]:
 
 
 def subset(input_list, start, end):
     return input_list[start:end]
-subset(input_list, start, end)
 
 
 # In[7]:
@@ -36,8 +31,6 @@ subset(input_list, start, end)
 #Egy példa a kimenetre: [1,4,7]
 #return type: list
 #függvény neve legyen: every_nth
-input_list=[1,2,3,4,5,6,7,8,9]
-n=3
 
 
 # In[6]:
@@ -45,7 +38,6 @@ n=3
 
 def every_nth(input_list,n):
     return input_list[::n]
-every_nth(input_list, n)
 
 
 # In[9]:
@@ -57,7 +49,6 @@ every_nth(input_list, n)
 #Egy példa a kimenetre: True
 #return type: bool
 #függvény neve legyen: unique
-input_list = [1,2,3,4,5,6,7]
 
 
 # In[8]:
@@ -65,7 +56,6 @@ input_list = [1,2,3,4,5,6,7]
 
 def unique(input_list):
     return len(input_list) == len(set(input_list))
-unique(input_list)
 
 
 # In[13]:
@@ -78,7 +68,6 @@ unique(input_list)
 #NOTE: csak 2 dimenziós listát kezeljen nem kell ennél mélyebbet
 #return type: list
 #függvény neve legyen: flatten
-input_list = [[1,2],[3,4],[5,6]]
 
 
 # In[12]:
@@ -90,7 +79,6 @@ def flatten(lst):
         for item in sublist:
             flattened_list.append(item)
     return flattened_list
-flatten(input_list)
 
 
 # In[15]:
@@ -104,9 +92,6 @@ flatten(input_list)
 #Egy példa a kimenetre: [1,2,3,4,5,6,7,8,9]
 #return type: list
 #függvény neve legyen: merge_lists
-lista_1 = [1,2,3]
-lista_2 = [4,5,6]
-lista_3 = [7,8,9]
 
 
 # In[14]:
@@ -117,7 +102,6 @@ def merge_lists(*args):
     for arg in args:
         merged_list.extend(arg)
     return merged_list
-merge_lists(lista_1, lista_2, lista_3)
 
 
 # In[17]:
@@ -129,7 +113,6 @@ merge_lists(lista_1, lista_2, lista_3)
 #Egy példa a kimenetre: [(2,1),(4,3)] 
 #return type: list
 #függvény neve legyen: reverse_tuples
-input_list = [(1,2),(3,4)]
 
 
 # In[16]:
@@ -138,7 +121,6 @@ input_list = [(1,2),(3,4)]
 def reverse_tuples(input_list):
     reversed_list = [(a, b) for (b, a) in input_list]
     return reversed_list
-reverse_tuples(input_list)
 
 
 # In[19]:
@@ -150,7 +132,6 @@ reverse_tuples(input_list)
 #Egy példa a kimenetre: [1,2,3,4,5]
 #return type: list
 #függvény neve legyen: remove_duplicates
-input_list = [1,2,3,3,4,5]
 
 
 # In[18]:
@@ -158,7 +139,6 @@ input_list = [1,2,3,3,4,5]
 
 def remove_duplicates(input_list):
     return list(set(input_list))
-remove_duplicates(input_list)
 
 
 # In[21]:
@@ -174,9 +154,6 @@ remove_duplicates(input_list)
 #                        [3,6,9]]
 #return type: list
 #függvény neve legyen: transpose
-input_list = [[1,2,3],
-              [4,5,6],
-              [7,8,9]]
 
 
 # In[20]:
@@ -184,7 +161,6 @@ input_list = [[1,2,3],
 
 def transpose(input_list):
     return [list(row) for row in zip(*input_list)]
-transpose(input_list)
 
 
 # In[23]:
@@ -197,8 +173,6 @@ transpose(input_list)
 #NOTE: ha nem mindegyik lista elemet lehet chunk_size méretű listába tenni akkor a maradékot a példában látott módon kezeljétek
 #return type: list
 #függvény neve legyen: split_into_chunks
-input_list = [1,2,3,4,5,6,7,8]
-chunk_size = 3
 
 
 # In[22]:
@@ -206,7 +180,6 @@ chunk_size = 3
 
 def split_into_chunks(input_list, chunk_size):
     return [input_list[i:i+chunk_size] for i in range(0, len(input_list), chunk_size)]
-split_into_chunks(input_list, chunk_size)
 
 
 # In[36]:
@@ -218,8 +191,6 @@ split_into_chunks(input_list, chunk_size)
 #Egy példa a kimenetre: {"one":1,"two":2,"four":4,"three":3}
 #HINT: használj *args-ot
 #függvény neve legyen: merge_dicts
-dict_1 = {"one":1,"two":2}
-dict_2 = {"four":4,"three":3}
 
 
 # In[34]:
@@ -230,7 +201,6 @@ def merge_dicts(*args):
     for arg in args:
         result_dict.update(arg)
     return result_dict
-merge_dicts(dict_1,dict_2)
 
 
 # In[38]:
@@ -241,7 +211,6 @@ merge_dicts(dict_1,dict_2)
 #Egy példa a kimenetre: {"event":[2,4,6],"odd":[1,3,5]}
 #return type: dict
 #függvény neve legyen: by_parity
-input_list = [1,2,3,4,5,6]
 
 
 # In[37]:
@@ -255,7 +224,6 @@ def by_parity(input_list):
         else:
             result["odd"].append(number)
     return result
-by_parity(input_list)
 
 
 # In[40]:
@@ -266,7 +234,6 @@ by_parity(input_list)
 #Egy példa a kimenetre: {"some_key":2.5,"another_key":2.5}
 #return type: dict
 #függvény neve legyen: mean_key_value
-input_dict = {"some_key":[1,2,3,4],"another_key":[1,2,3,4]}
 
 
 # In[39]:
@@ -277,7 +244,6 @@ def mean_key_value(input_dict):
     for key, values in input_dict.items():
         result[key] = sum(values) / len(values)
     return result
-mean_key_value(input_dict)
 
 
 # In[ ]:
@@ -286,5 +252,22 @@ mean_key_value(input_dict)
 #Ha végeztél a feladatokkal akkor ezt a jupytert alakítsd át egy .py file-ra 
 #ha vscode-ban dolgozol: https://stackoverflow.com/questions/64297272/best-way-to-convert-ipynb-to-py-in-vscode
 #ha jupyter lab-ban dolgozol: https://stackoverflow.com/questions/52885901/how-to-save-python-script-as-py-file-on-jupyter-notebook
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
 
 
