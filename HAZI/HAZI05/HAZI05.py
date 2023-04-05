@@ -51,15 +51,3 @@ class KNNClassifier:
                 best_k_value, best_accuracy = k, acc
         return best_k_value, round(best_accuracy, 2)
 
-
-csv_path = "HAZI/HAZI05/HAZI05.py"
-
-knn = KNNClassifier()
-x, y = knn.load_csv(csv_path)
-x_train, y_train, x_test, y_test = knn.train_test_split(x, y, test_split_ratio=0.2)
-y_preds = knn.predict(x_train, y_train, x_test, k=3)
-acc = knn.accuracy(y_test, y_preds)
-knn.plot_confusion_matrix(y_test, y_preds)
-best_k_value, best_accuracy = knn.best_k(x_train, y_train, x_test, y_test)
-print("Best k value:", best_k_value)
-print("Best accuracy:", best_accuracy)
