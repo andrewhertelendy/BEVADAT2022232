@@ -17,25 +17,26 @@ class KMeansOnDigits:
         self.clusters = None
         self.labels = None
         self.accuracy = None
-        self.model = None
+        self.mat = None
 
-    def load_digits(self):
+    def load_dataset(self):
         self.digits = datasets.load_digits()
 
     def predict(self):
-        self.model = KMeans(n_clusters=self.n_clusters, random_state=self.random_state)
-        self.clusters = self.model.fit_predict(self.digits.data)
-        return self.model, self.clusters
+        self.clusters = KMeans(n_clusters=self.n_clusters, random_state=self.random_state).fit_predict(self.digits.data)
+        return self.clusters
 
     def get_labels(self):
-        labels = np.zeros_like(self.clusters)
+        self.labels = np.zeros_like(self.clusters)
         for i in range(10):
             mask = (self.clusters == i)
-            labels[mask] = mode(self.digits.target[mask])[0]
-        self.labels = labels
-        return labels
+            self.labels[mask] = mode(self.digits.target[mask])[0]
+        return self.labels
 
     def calc_accuracy(self, target_labels:np.ndarray,predicted_labels:np.ndarray):
         self.accuracy = accuracy_score(target_labels, predicted_labels)
         return round(self.accuracy, 2)
 
+    def confusion_matrix(self):
+        self.mat = confusion_matrix(self.digits.target, self.labels)
+        return self.mat
