@@ -39,9 +39,3 @@ class KMeansOnDigits:
         self.accuracy = accuracy_score(target_labels, predicted_labels)
         return round(self.accuracy, 2)
 
-kmeans_model = KMeansOnDigits(n_clusters = 10, random_state = 0)
-
-kmeans_model.load_digits()
-kmeans_model.predict()
-kmeans_model.get_labels()
-kmeans_model.calc_accuracy(kmeans_model.digits.target, kmeans_model.labels)
