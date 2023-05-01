@@ -40,3 +40,15 @@ class KMeansOnDigits:
     def confusion_matrix(self):
         self.mat = confusion_matrix(self.digits.target, self.labels)
         return self.mat
+    
+# kmeans_model = KMeansOnDigits(n_clusters=10, random_state=0)
+
+# kmeans_model.load_dataset()
+# kmeans_model.predict()
+# kmeans_model.get_labels()
+# kmeans_model.calc_accuracy(kmeans_model.digits.target, kmeans_model.labels)
+# kmeans_model.confusion_matrix()
+# sns.heatmap(kmeans_model.mat.T, square=True, annot=True, fmt='d', cbar=False)
+# plt.xlabel('true label')
+# plt.ylabel('predicted label')
+# plt.show()
