@@ -33,8 +33,8 @@ class KMeansOnDigits:
             self.labels[mask] = mode(self.digits.target[mask])[0]
         return self.labels
 
-    def calc_accuracy(self, target_labels:np.ndarray,predicted_labels:np.ndarray):
-        self.accuracy = accuracy_score(target_labels, predicted_labels)
+    def calc_accuracy(self):
+        self.accuracy = accuracy_score(self.digits.target, self.labels)
         return round(self.accuracy, 2)
 
     def confusion_matrix(self):
@@ -46,7 +46,7 @@ class KMeansOnDigits:
 # kmeans_model.load_dataset()
 # kmeans_model.predict()
 # kmeans_model.get_labels()
-# kmeans_model.calc_accuracy(kmeans_model.digits.target, kmeans_model.labels)
+# kmeans_model.calc_accuracy()
 # kmeans_model.confusion_matrix()
 # sns.heatmap(kmeans_model.mat.T, square=True, annot=True, fmt='d', cbar=False)
 # plt.xlabel('true label')
